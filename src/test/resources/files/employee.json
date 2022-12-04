@@ -1,0 +1,11 @@
+{
+  "name": "Aleix Melon",
+  "id": "E00245",
+  "age": 23,
+  "married": true,
+  "address": {
+    "street": "32, Laham St.",
+    "city": "Innsbruck",
+    "country": "Austria"
+  }
+}
