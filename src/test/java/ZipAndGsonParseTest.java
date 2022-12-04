@@ -27,13 +27,13 @@ public class ZipAndGsonParseTest {
         ) {
             ZipEntry entry;
 
-            while((entry = zis.getNextEntry())!= null) {
+            while ((entry = zis.getNextEntry()) != null) {
                 if (entry.getName().contains(".pdf")) {
                     PDF contentPDF = new PDF(zis);
                     assertThat(contentPDF.text).contains("A Simple PDF");
                 } else if (entry.getName().contains(".xlsx")) {
                     XLS contentXLS = new XLS(zis);
-                    assertThat(contentXLS.excel.getSheetAt(0).getRow(2).getCell(1).getStringCellValue()).contains("fine");
+                    assertThat(contentXLS.excel.getSheetAt(0).getRow(1).getCell(2).getStringCellValue()).contains("fine");
                 } else if (entry.getName().contains(".csv")) {
                     CSVReader reader = new CSVReader(new InputStreamReader(zis));
                     List<String[]> contentCSV = reader.readAll();
